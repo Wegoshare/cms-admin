@@ -85,6 +85,31 @@ export const config = {
         security: [{ api_key: [] }],
       },
     },
+    '/entries/ident/{identificator}': {
+      get: {
+        tags: ['entries'],
+        summary: 'Get exact entry',
+        produces: ['application/json'],
+        parameters: [
+          {
+            name: 'identificator',
+            in: 'path',
+            description: 'Identificator of entry by identificator',
+            required: true,
+            type: 'string',
+          },
+        ],
+        responses: {
+          '200': {
+            description: 'OK',
+            schema: Entry,
+          },
+          '401': { description: 'Unauthorized' },
+          '404': { description: 'Not found' },
+        },
+        security: [{ api_key: [] }],
+      },
+    },
     '/files/{fileId}/{fileName}': {
       get: {
         tags: ['files'],
