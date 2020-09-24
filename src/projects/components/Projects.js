@@ -29,16 +29,20 @@ import { RedirectContainer } from 'src/global/components/RedirectContainer'
 import { ErrorContainer } from 'src/global/components/ErrorContainer'
 import { onLogoutClick } from 'src/projects/actions/onLogoutClick'
 import { PageContainer } from 'src/lib/components/PageContainer'
+import store from 'store'
+import logo from '../assets/logo.png'
 
 import { cn } from './Projects.style'
 
 class AProjects extends Component {
+  static userToken
+
   static propTypes = {
     projects: arrayOf(
       shape({
         id: string.isRequired,
         name: string.isRequired,
-        image: string.isRequired,
+        //image: string.isRequired,
       })
     ).isRequired,
     dialogs: shape({
@@ -65,6 +69,7 @@ class AProjects extends Component {
   componentDidMount() {
     const { getAction } = this.props
     getAction()
+    this.userToken = store.get('token')
   }
 
   render() {
@@ -83,97 +88,99 @@ class AProjects extends Component {
       redirectSet,
       onLogoutClick,
     } = this.props
+
     if (loading.initialGet) {
       return (
         <div className="loader-page-container">
           <CircularProgress size={100} />
         </div>
       )
-    }
-    return (
-      <PageContainer>
-        <RedirectContainer />
-        <ErrorContainer />
-        <Loader />
-        <div className="pt-sm pr-xxl pb-xxl pl-xxl">
-          <div className="text-right pb-md">
-            <Button onClick={onLogoutClick} color="primary" filled>
-              Logout
+    } else {
+      return (
+        <PageContainer>
+          <RedirectContainer />
+          <ErrorContainer />
+          <Loader />
+          <div className="pt-sm pr-xxl pb-xxl pl-xxl">
+            <div className="text-right pb-md">
+              <Button onClick={onLogoutClick} color="primary" filled>
+                Logout
             </Button>
-          </div>
-          <ConfirmDialog
-            title="Delete project?"
-            text="Are you sure you want to delete model? All data related to this project will be lost."
-            open={dialogs.confirm.show}
-            mount={dialogs.confirm.mount}
-            onDone={() => onConfirmDialogConfirm()}
-            onClose={() => onDialogClose('confirm')}
-            onExited={() => onDialogExited('confirm')}
-          />
-          <ProjectDialog
-            title="Create new project"
-            mount={dialogs.add.mount}
-            open={dialogs.add.show}
-            onDone={onAddDialogDone}
-            onClose={() => onDialogClose('add')}
-            onExited={() => onDialogExited('add')}
-          />
-          <ProjectDialog
-            project={dialogs.edit.project}
-            title="Edit project"
-            mount={dialogs.edit.mount}
-            open={dialogs.edit.show}
-            onDone={onEditDialogDone}
-            onClose={() => onDialogClose('edit')}
-            onExited={() => onDialogExited('edit')}
-          />
-          <Grid container spacing={16}>
-            {projects.map(project => (
-              <Grid item xs={12} sm={6} md={3} key={project.id}>
-                <div className={cn.card}>
-                  <div className={cn.cardBody} onClick={() => redirectSet(routes.index(project.id))}>
-                    <Avatar src={project.image} alt="Project avatar" className={cn.avatar} />
-                    <div className="mt-md pt-sm">
-                      <Typography type="lg" className="text-one-line">
-                        {project.name}
-                      </Typography>
+            </div>
+            <ConfirmDialog
+              title="Delete project?"
+              text="Are you sure you want to delete model? All data related to this project will be lost."
+              open={dialogs.confirm.show}
+              mount={dialogs.confirm.mount}
+              onDone={() => onConfirmDialogConfirm()}
+              onClose={() => onDialogClose('confirm')}
+              onExited={() => onDialogExited('confirm')}
+            />
+            <ProjectDialog
+              title="Create new project"
+              mount={dialogs.add.mount}
+              open={dialogs.add.show}
+              onDone={onAddDialogDone}
+              onClose={() => onDialogClose('add')}
+              onExited={() => onDialogExited('add')}
+            />
+            <ProjectDialog
+              project={dialogs.edit.project}
+              title="Edit project"
+              mount={dialogs.edit.mount}
+              open={dialogs.edit.show}
+              onDone={onEditDialogDone}
+              onClose={() => onDialogClose('edit')}
+              onExited={() => onDialogExited('edit')}
+            />
+            <Grid container spacing={16}>
+              {projects.map(project => (
+                <Grid item xs={12} sm={6} md={3} key={project.id}>
+                  <div className={cn.card}>
+                    <div className={cn.cardBody} onClick={() => redirectSet(routes.index(project.id))}>
+                      <Avatar src={logo} alt="Project avatar" className={cn.avatar} />
+                      <div className="mt-md pt-sm">
+                        <Typography type="lg" className="text-one-line">
+                          {project.name}
+                        </Typography>
+                      </div>
+                    </div>
+                    {this.userToken === "5f60d9eb07044a754b95a33b" ? <div className={cn.cardFooter}>
+                      <Grid container spacing={8}>
+                        <Grid item xs={12} sm={6}>
+                          <div className="text-center">
+                            <Button size="md" onClick={() => onEditProject(project)}>
+                              Edit
+                          </Button>
+                          </div>
+                        </Grid>
+                        <Grid item xs={12} sm={6}>
+                          <div className="text-center">
+                            <Button size="md" onClick={() => onDeleteProject(project.id)} color="accent">
+                              Delete
+                          </Button>
+                          </div>
+                        </Grid>
+                      </Grid>
+                    </div> : undefined}
+                  </div>
+                </Grid>
+              ))}
+              {this.userToken === "5f60d9eb07044a754b95a33b" ? <Grid item xs={12} sm={6} md={3}>
+                <div className={cn.newProjectCard} onClick={() => onAddProject()}>
+                  <div className={cn.newProjectCardInner}>
+                    <Icon type="projects-add" color={colors.black.t3} size={100} />
+                    <div className="pt-md">
+                      <div className={cn.newProjectText}>Create new project</div>
                     </div>
                   </div>
-                  <div className={cn.cardFooter}>
-                    <Grid container spacing={8}>
-                      <Grid item xs={12} sm={6}>
-                        <div className="text-center">
-                          <Button size="md" onClick={() => onEditProject(project)}>
-                            Edit
-                          </Button>
-                        </div>
-                      </Grid>
-                      <Grid item xs={12} sm={6}>
-                        <div className="text-center">
-                          <Button size="md" onClick={() => onDeleteProject(project.id)} color="accent">
-                            Delete
-                          </Button>
-                        </div>
-                      </Grid>
-                    </Grid>
-                  </div>
                 </div>
-              </Grid>
-            ))}
-            <Grid item xs={12} sm={6} md={3}>
-              <div className={cn.newProjectCard} onClick={() => onAddProject()}>
-                <div className={cn.newProjectCardInner}>
-                  <Icon type="projects-add" color={colors.black.t3} size={100} />
-                  <div className="pt-md">
-                    <div className={cn.newProjectText}>Create new project</div>
-                  </div>
-                </div>
-              </div>
+              </Grid> : undefined}
             </Grid>
-          </Grid>
-        </div>
-      </PageContainer>
-    )
+          </div>
+        </PageContainer>
+      )
+    }
   }
 }
 

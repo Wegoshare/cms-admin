@@ -5,6 +5,11 @@ import { StringModelType } from 'src/lib/types/models/StringModelType'
 import { StringSubmodelType } from 'src/lib/types/models/StringSubmodelType'
 import { CodeEditor } from 'src/lib/components/controls/CodeEditor'
 
+import { EditorState, convertToRaw, ContentState } from 'draft-js';
+import { Editor } from 'react-draft-wysiwyg';
+import 'react-draft-wysiwyg/dist/react-draft-wysiwyg.css';
+import htmlToDraft from 'html-to-draftjs';
+
 export class HtmlControl extends Component {
   static propTypes = {
     model: oneOfType([instanceOf(StringModelType), instanceOf(StringSubmodelType)]).isRequired,
@@ -29,6 +34,28 @@ export class HtmlControl extends Component {
     onItemDelete: null,
     onItemUp: null,
     onItemDown: null,
+  }
+
+  constructor(props) {
+    super(props);
+    const contentBlock = htmlToDraft(props.value);
+    if (contentBlock) {
+      const contentState = ContentState.createFromBlockArray(contentBlock.contentBlocks);
+      const editorState = EditorState.createWithContent(contentState);
+      this.state = {
+        editorState,
+      };
+    }
+  }
+
+  onEditorStateChange = (editorState) => {
+    this.setState({
+      editorState,
+    });
+  };
+
+  onChange() {
+    console.log("on change");
   }
 
   render() {
@@ -60,13 +87,21 @@ export class HtmlControl extends Component {
         onItemUp={onItemUp}
         onItemDown={onItemDown}
       >
-        <CodeEditor
+        <Editor
+          editorState={this.state.editorState}
+          toolbarClassName="toolbarClassName"
+          wrapperClassName="wrapperClassName"
+          editorClassName="editorClassName"
+          onEditorStateChange={this.onEditorStateChange}
+          onChange={this.onChange}
+        />
+        {/* <CodeEditor
           onChange={onStringChange}
           onBlur={onBlur}
           language="html"
           initialValue={value}
           disabled={disabled}
-        />
+        /> */}
       </ControlContainer>
     )
   }

@@ -13,15 +13,15 @@ export const fetch = ({ method, url, body, file, withCredentials = true }) => {
         body: !file
           ? body
           : (() => {
-              const formData = new FormData()
-              formData.append('file', file)
-              return formData
-            })(),
+            const formData = new FormData()
+            formData.append('file', file)
+            return formData
+          })(),
       },
       (err, resp, body) => {
         try {
           body = JSON.parse(body)
-        } catch (err) {}
+        } catch (err) { }
         if (err) {
           reject(err.message === '[object ProgressEvent]' ? new Error('Network error') : err)
           return

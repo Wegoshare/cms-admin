@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
+//import { Link } from 'react-router-dom'
 import { func } from 'prop-types'
 import { connect } from 'react-redux'
 import { RedirectContainer } from 'src/global/components/RedirectContainer'
@@ -11,10 +11,10 @@ import { Typography } from 'src/lib/components/Typography'
 import { validate } from 'src/lib/services/Validator'
 import { onDone } from 'src/login/actions/onDone'
 import { MessageBlock } from 'src/lib/components/MessageBlock'
-import { routes } from 'src/lib/services/Routes'
+//import { routes } from 'src/lib/services/Routes'
 import { PageContainer } from 'src/lib/components/PageContainer'
 
-import { cn } from 'src/login/components/Login.style'
+//import { cn } from 'src/login/components/Login.style'
 
 class ALogin extends Component {
   static propTypes = {
@@ -97,14 +97,14 @@ class ALogin extends Component {
             <Button onClick={() => this.onDone()} color="primary" filled>
               Submit
             </Button>
-            <div className={`pt-lg ${cn.link}`}>
+            {/* <div className={`pt-lg ${cn.link}`}>
               <div>
                 <Link to={routes.registration()}>Create an account</Link>
               </div>
               <div>
                 <Link to={routes.recoverPass()}>Forgot your password?</Link>
               </div>
-            </div>
+            </div> */}
           </MessageBlock>
         </div>
       </PageContainer>

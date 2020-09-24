@@ -1,7 +1,7 @@
 import { getProjectsFetcher } from 'src/global/fetchers/getProjects'
 
 export function getAction() {
-  return function(dispatch, getState) {
+  return function (dispatch, getState) {
     dispatch({
       widget: 'projects',
       type: 'getStart',

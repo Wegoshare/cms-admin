@@ -10,6 +10,8 @@ import { validate } from 'src/lib/services/Validator'
 import { isNumber } from 'src/lib/helpers/isNumber'
 import { sortKeys } from 'src/lib/helpers/sortKeys'
 import { TextField } from 'src/lib/components/fields/TextField'
+import draftToHtml from 'draftjs-to-html';
+import { convertToRaw } from 'draft-js';
 
 export class EntryDialogInner extends Component {
   static propTypes = {
@@ -60,6 +62,7 @@ export class EntryDialogInner extends Component {
   }
 
   initString(model, value) {
+    console.log("init string", model, value)
     const isTypeCorrect = this.isTypeCorrect(model, value)
     return {
       model: model,
@@ -110,17 +113,17 @@ export class EntryDialogInner extends Component {
         ? null
         : isTypeCorrect
           ? (() => {
-              const addControlsForMin = (model.minItems || 0) - value.value.length
-              const isEnoughForMin = addControlsForMin <= 0
-              const existsControls = value.value.map(item => {
-                const isItemTypeCorrect = this.isTypeCorrect(model.items, item)
-                return isItemTypeCorrect ? this.init(model.items, item) : this.init(model.items)
-              })
-              const emptyControlsForMin = isEnoughForMin
-                ? []
-                : Array.from(Array(addControlsForMin)).map(() => this.init(model.items))
-              return [...existsControls, ...emptyControlsForMin]
-            })()
+            const addControlsForMin = (model.minItems || 0) - value.value.length
+            const isEnoughForMin = addControlsForMin <= 0
+            const existsControls = value.value.map(item => {
+              const isItemTypeCorrect = this.isTypeCorrect(model.items, item)
+              return isItemTypeCorrect ? this.init(model.items, item) : this.init(model.items)
+            })
+            const emptyControlsForMin = isEnoughForMin
+              ? []
+              : Array.from(Array(addControlsForMin)).map(() => this.init(model.items))
+            return [...existsControls, ...emptyControlsForMin]
+          })()
           : Array.from(Array(model.minItems || 0)).map(() => this.init(model.items)),
     }
   }
@@ -197,6 +200,7 @@ export class EntryDialogInner extends Component {
   }
 
   onStringChange(dist, value) {
+    console.log("onStringChange");
     const { control } = this.state
     const arr = [...dist, 1]
     arr.reduce((res, key, index) => {
@@ -426,20 +430,21 @@ export class EntryDialogInner extends Component {
   onDone() {
     const { onDone, model, entry } = this.props
     const { control, identificator } = this.state
+    console.log(control)
     const valid = this.validate(control)
     if (!valid) return this.setState({ control })
     onDone(
       entry
         ? {
-            ...entry,
-            identificator,
-            value: this.normalize(control, false),
-          }
+          ...entry,
+          identificator,
+          value: this.normalize(control, false),
+        }
         : {
-            identificator,
-            modelId: model.id,
-            value: this.normalize(control, false),
-          }
+          identificator,
+          modelId: model.id,
+          value: this.normalize(control, false),
+        }
     )
   }
 
@@ -454,7 +459,7 @@ export class EntryDialogInner extends Component {
             <TextField
               label="Entry identificator"
               onChange={value => this.setState({ identificator: value })}
-              onBlur={() => {}}
+              onBlur={() => { }}
               value={identificator}
               error={false}
               helperText="This will help to distinguish one entry from another."

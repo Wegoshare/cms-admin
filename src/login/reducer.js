@@ -9,10 +9,10 @@ export function postStart(state) {
   state.login.loading.post = true
 }
 
-export function postEnd(state) {
+export function postEnd(state, res) {
   fetchingEnd(state)
   state.login.loading.post = false
-  auth.set(true)
+  auth.set(true, res)
   redirectSet(state, routes.projects())
 }
 
