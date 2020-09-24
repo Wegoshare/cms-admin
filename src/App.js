@@ -58,7 +58,7 @@ export const App = () => (
             </Container>
           )}
         />
-        <UnauthRoute exact path="/" component={Landing} />
+        <UnauthRoute exact path="/" component={Login} />
         <UnauthRoute exact path="/login" component={Login} />
         <UnauthRoute exact path="/registration" component={Registration} />
         <UnauthRoute exact path="/email-confirm/:activationToken" component={EmailConfirm} />
