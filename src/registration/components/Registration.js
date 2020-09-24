@@ -137,14 +137,7 @@ class ARegistration extends Component {
                 <Button onClick={() => this.onDone()} color="primary" filled disabled={loading}>
                   Submit
                 </Button>
-                <div className={`pt-lg ${cn.link}`}>
-                  <div>
-                    <span>Have an account?</span> <Link to={routes.login()}>Sign in</Link>
-                  </div>
-                  <div>
-                    <Link to={routes.recoverPass()}>Forgot your password?</Link>
-                  </div>
-                </div>
+                
               </div>
             )}
           </MessageBlock>
