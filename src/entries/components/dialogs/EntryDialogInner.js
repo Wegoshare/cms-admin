@@ -10,8 +10,6 @@ import { validate } from 'src/lib/services/Validator'
 import { isNumber } from 'src/lib/helpers/isNumber'
 import { sortKeys } from 'src/lib/helpers/sortKeys'
 import { TextField } from 'src/lib/components/fields/TextField'
-import draftToHtml from 'draftjs-to-html';
-import { convertToRaw } from 'draft-js';
 
 export class EntryDialogInner extends Component {
   static propTypes = {
@@ -199,21 +197,7 @@ export class EntryDialogInner extends Component {
     this.setState({ control })
   }
 
-  onStringChange(dist, value) {
-    console.log("onStringChange");
-    const { control } = this.state
-    const arr = [...dist, 1]
-    arr.reduce((res, key, index) => {
-      const isLast = arr.length - 1 === index
-      if (isLast) {
-        res.value = value
-        res.error = ''
-      }
-      return res[key]
-    }, control)
-    this.setState({ control })
-  }
-
+ 
   onNumberChange(dist, value) {
     const { control } = this.state
     const arr = [...dist, 1]

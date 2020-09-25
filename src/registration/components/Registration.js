@@ -14,8 +14,6 @@ import { routes } from 'src/lib/services/Routes'
 import { Link } from 'react-router-dom'
 import { PageContainer } from 'src/lib/components/PageContainer'
 
-import { cn } from './Registration.style'
-
 class ARegistration extends Component {
   static propTypes = {
     onDone: func.isRequired,

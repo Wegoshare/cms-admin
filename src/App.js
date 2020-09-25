@@ -17,7 +17,6 @@ import { RecoverPass } from 'src/recover-pass/components/RecoverPass'
 import { ChangePass } from 'src/change-pass/components/ChangePass'
 import { Tokens } from 'src/tokens/components/Tokens'
 import { Explorer } from 'src/explorer/components/Explorer'
-import { Landing } from 'src/landing/components/Landing'
 import { Contacts } from 'src/contacts/components/Contacts'
 import { auth } from 'src/lib/services/Auth'
 

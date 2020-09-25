@@ -3,9 +3,8 @@ import { func, string, bool, oneOfType, instanceOf } from 'prop-types'
 import { ControlContainer } from 'src/entries/components/dialogs/ControlContainer'
 import { StringModelType } from 'src/lib/types/models/StringModelType'
 import { StringSubmodelType } from 'src/lib/types/models/StringSubmodelType'
-import { CodeEditor } from 'src/lib/components/controls/CodeEditor'
 
-import { EditorState, convertToRaw, ContentState } from 'draft-js';
+import { EditorState, ContentState } from 'draft-js';
 import { Editor } from 'react-draft-wysiwyg';
 import 'react-draft-wysiwyg/dist/react-draft-wysiwyg.css';
 import htmlToDraft from 'html-to-draftjs';
@@ -13,10 +12,7 @@ import htmlToDraft from 'html-to-draftjs';
 export class HtmlControl extends Component {
   static propTypes = {
     model: oneOfType([instanceOf(StringModelType), instanceOf(StringSubmodelType)]).isRequired,
-    value: string.isRequired,
     error: string.isRequired,
-    onStringChange: func.isRequired,
-    onBlur: func.isRequired,
     disabled: bool,
     propBtnStatus: string,
     onPropBtnStatusChange: func,
@@ -61,10 +57,7 @@ export class HtmlControl extends Component {
   render() {
     const {
       model,
-      value,
       error,
-      onStringChange,
-      onBlur,
       disabled,
       propBtnStatus,
       onPropBtnStatusChange,
