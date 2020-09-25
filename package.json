@@ -10,7 +10,7 @@
     "build": "npm run pre && react-scripts build",
     "start": "npm run pre && react-scripts start",
     "test": "react-scripts test --env=jsdom",
-    "start.prod": "NODE_ENV=production forever start -a -p logs -l console.log src/index.js",
+    "start.prod": "NODE_ENV=production forever start -a -p logs -l console.log server/index.js",
     "stop": "forever stop server/index.js"
   },
   "repository": {
