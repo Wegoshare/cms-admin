@@ -12,6 +12,7 @@ export function postStart(state) {
 export function postEnd(state, res) {
   fetchingEnd(state)
   state.login.loading.post = false
+  console.log(res)
   auth.set(true, res)
   redirectSet(state, routes.projects())
 }
