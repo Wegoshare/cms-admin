@@ -3,7 +3,7 @@ import store from 'store'
 class Auth {
   set(isSet, info = undefined) {
     store.set('isAuthSet', isSet)
-    store.set('token', info.id)
+    info !== undefined ? store.set('token', info.id) : store.remove('token')
   }
 
   isSet() {
