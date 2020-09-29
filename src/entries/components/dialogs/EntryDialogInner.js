@@ -197,7 +197,20 @@ export class EntryDialogInner extends Component {
     this.setState({ control })
   }
 
- 
+  onStringChange(dist, value) {
+    const { control } = this.state
+    const arr = [...dist, 1]
+    arr.reduce((res, key, index) => {
+      const isLast = arr.length - 1 === index
+      if (isLast) {
+        res.value = value
+        res.error = ''
+      }
+      return res[key]
+    }, control)
+    this.setState({ control })
+  }
+
   onNumberChange(dist, value) {
     const { control } = this.state
     const arr = [...dist, 1]
