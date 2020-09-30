@@ -10,8 +10,6 @@ import { Typography } from 'src/lib/components/Typography'
 import { validate } from 'src/lib/services/Validator'
 import { MessageBlock } from 'src/lib/components/MessageBlock'
 import { onDone } from 'src/users/actions/onDone'
-import { routes } from 'src/lib/services/Routes'
-import { Link } from 'react-router-dom'
 import { PageContainer } from 'src/lib/components/PageContainer'
 
 class AUsers extends Component {
