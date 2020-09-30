@@ -212,6 +212,26 @@ export class Menu extends React.Component {
                           )
                     )}
                 </Collapse>
+
+                {this.userToken === "5f60d9eb07044a754b95a33b" ? <ListItem
+                  button
+                  onClick={() => redirectSet(routes.users(projectId))}
+                  className={classNames(cn.menuItem, open ? '' : cn.menuItemColapsed, {
+                    selected: routes.isUsers(projectId),
+                  })}
+                >
+                  <ListItemIcon>
+                    <CircledIcon
+                      className={`${cn.menuItemAva} ${open ? '' : cn.menuItemAvaColapsed}`}
+                      size={open ? 44 : 36}
+                      color={colors.black.t5}
+                    >
+                      <Icon type="menu-item-explorer" size={open ? 22 : 20} color={colors.white.main} />
+                    </CircledIcon>
+                  </ListItemIcon>
+                  <div className={`${cn.menuItemText} text-one-line`}>Users</div>
+                </ListItem> : undefined}
+
                 {this.userToken === "5f60d9eb07044a754b95a33b" ? <ListItem
                   button
                   onClick={() => redirectSet(routes.tokens(projectId))}
@@ -249,24 +269,7 @@ export class Menu extends React.Component {
                   <div className={`${cn.menuItemText} text-one-line`}>Api explorer</div>
                 </ListItem> : undefined}
 
-                {this.userToken === "5f60d9eb07044a754b95a33b" ? <ListItem
-                  button
-                  onClick={() => redirectSet(routes.users(projectId))}
-                  className={classNames(cn.menuItem, open ? '' : cn.menuItemColapsed, {
-                    selected: routes.isUsers(projectId),
-                  })}
-                >
-                  <ListItemIcon>
-                    <CircledIcon
-                      className={`${cn.menuItemAva} ${open ? '' : cn.menuItemAvaColapsed}`}
-                      size={open ? 44 : 36}
-                      color={colors.black.t5}
-                    >
-                      <Icon type="menu-item-explorer" size={open ? 22 : 20} color={colors.white.main} />
-                    </CircledIcon>
-                  </ListItemIcon>
-                  <div className={`${cn.menuItemText} text-one-line`}>Users</div>
-                </ListItem> : undefined}
+
 
               </List>
               <Loader />

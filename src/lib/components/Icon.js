@@ -27,6 +27,7 @@ import { MdLink as Reference } from 'react-icons/md'
 import { MdInsertDriveFile as Asset } from 'react-icons/md'
 import { MdCloudDownload } from 'react-icons/md'
 import { MdVpnKey } from 'react-icons/md'
+import { FaUserFriends } from "react-icons/fa";
 
 const MAP = {
   'projects-add': Add,
@@ -39,7 +40,8 @@ const MAP = {
   'menu-item-content-close': ArrowUp,
   'menu-item-content-model': Cube,
   'menu-item-content-exclamation': Exclamation,
-  'menu-item-tokens': MdVpnKey,
+  'menu-item-tokens': FaUserFriends,
+  'menu-users': MdVpnKey,
   'menu-item-explorer': MdCloudDownload,
   'models-header-add': Add,
   'models-dialog-string': TextFields,
