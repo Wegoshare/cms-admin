@@ -46,11 +46,10 @@ class AEmailConfirm extends Component {
                 Email address verified. Now you are able to <Link to={routes.login()}>sign in</Link>.
               </span>
             ) : (
-              <span>
-                Something went wrong. Try to reload page or try to{' '}
-                <Link to={routes.registration()}>sign up</Link> once again.
-              </span>
-            )}
+                <span>
+                  Something went wrong. Try to reload page or try to{' '}
+                </span>
+              )}
           </MessageBlock>
         </div>
       </PageContainer>

@@ -1,5 +1,5 @@
 export const onDone = creds => ({
-  widget: 'registration',
+  widget: 'users',
   type: 'onDone',
   payload: { creds },
 })

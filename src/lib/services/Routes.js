@@ -57,6 +57,15 @@ class Routes {
     return pathname === `/projects/${projectId}/explorer`
   }
 
+  users(projectId) {
+    return `/projects/${projectId}/users`
+  }
+
+  isUsers(projectId) {
+    const { pathname } = window.location
+    return pathname === `/projects/${projectId}/users`
+  }
+
   notFound() {
     return `/not-found`
   }

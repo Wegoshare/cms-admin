@@ -97,14 +97,6 @@ class ALogin extends Component {
             <Button onClick={() => this.onDone()} color="primary" filled>
               Submit
             </Button>
-            {/* <div className={`pt-lg ${cn.link}`}>
-              <div>
-                <Link to={routes.registration()}>Create an account</Link>
-              </div>
-              <div>
-                <Link to={routes.recoverPass()}>Forgot your password?</Link>
-              </div>
-            </div> */}
           </MessageBlock>
         </div>
       </PageContainer>

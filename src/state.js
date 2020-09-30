@@ -79,7 +79,7 @@ export const state = () => ({
       post: false,
     },
   },
-  registration: {
+  users: {
     loading: {
       post: false,
     },

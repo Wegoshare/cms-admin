@@ -17,7 +17,7 @@ import store from 'store'
 import { cn } from './Menu.style'
 
 export class Menu extends React.Component {
-  static userToken 
+  static userToken
 
   static propTypes = {
     redirectSet: func.isRequired,
@@ -66,7 +66,7 @@ export class Menu extends React.Component {
   }
 
   render() {
-    this.userToken= store.get('token')
+    this.userToken = store.get('token')
 
     const { children, redirectSet, models, entries, conflicts, projectId, project } = this.props
     const { open, contentExpanded } = this.state
@@ -119,7 +119,7 @@ export class Menu extends React.Component {
                   </ListItemIcon>
                   <div className={`${cn.menuItemText} text-one-line`}>Home</div>
                 </ListItem>
-                {this.userToken === "5f60d9eb07044a754b95a33b" ?<ListItem
+                {this.userToken === "5f60d9eb07044a754b95a33b" ? <ListItem
                   button
                   onClick={() => redirectSet(routes.models(projectId))}
                   className={classNames(cn.menuItem, open ? '' : cn.menuItemColapsed, {
@@ -157,30 +157,30 @@ export class Menu extends React.Component {
                   {contentExpanded ? (
                     <Icon type="menu-item-content-close" color={colors.white.main} />
                   ) : (
-                    <Icon type="menu-item-content-open" color={colors.white.main} />
-                  )}
+                      <Icon type="menu-item-content-open" color={colors.white.main} />
+                    )}
                 </ListItem>
                 <Collapse in={contentExpanded} unmountOnExit>
                   {!models || !entries
                     ? null
                     : models.map(
-                        (model, i) =>
-                          open ? (
-                            <ListItem
-                              button
-                              className={classNames(cn.menuSubItem, {
-                                selected: routes.isEntries(projectId),
-                                subSelected: routes.isExactEntry(projectId, model.id),
-                              })}
-                              key={model.id}
-                              onClick={() => redirectSet(routes.entries(projectId, model.id))}
-                            >
-                              <ListItemIcon>
-                                {entries
-                                  .filter(entry => entry.modelId === model.id)
-                                  .some(
-                                    entry => conflicts.filter(item => item.id === entry.id)[0].conflict
-                                  ) ? (
+                      (model, i) =>
+                        open ? (
+                          <ListItem
+                            button
+                            className={classNames(cn.menuSubItem, {
+                              selected: routes.isEntries(projectId),
+                              subSelected: routes.isExactEntry(projectId, model.id),
+                            })}
+                            key={model.id}
+                            onClick={() => redirectSet(routes.entries(projectId, model.id))}
+                          >
+                            <ListItemIcon>
+                              {entries
+                                .filter(entry => entry.modelId === model.id)
+                                .some(
+                                  entry => conflicts.filter(item => item.id === entry.id)[0].conflict
+                                ) ? (
                                   <CircledIcon size={20} color={colors.error.main}>
                                     <Icon
                                       type="menu-item-content-exclamation"
@@ -191,13 +191,13 @@ export class Menu extends React.Component {
                                 ) : (
                                   <Icon type="menu-item-content-model" color={colors.white.main} size={20} />
                                 )}
-                              </ListItemIcon>
-                              <div className={cn.menuSubItemTextExpanded}>{model.title}</div>
-                              <div className={cn.menuSubItemCounter}>
-                                {entries.filter(item => item.modelId === model.id).length}
-                              </div>
-                            </ListItem>
-                          ) : (
+                            </ListItemIcon>
+                            <div className={cn.menuSubItemTextExpanded}>{model.title}</div>
+                            <div className={cn.menuSubItemCounter}>
+                              {entries.filter(item => item.modelId === model.id).length}
+                            </div>
+                          </ListItem>
+                        ) : (
                             <ListItem
                               button
                               key={model.id}
@@ -210,9 +210,9 @@ export class Menu extends React.Component {
                               <div className={cn.menuSubItemTextColapsed}>{model.title}</div>
                             </ListItem>
                           )
-                      )}
+                    )}
                 </Collapse>
-                {this.userToken === "5f60d9eb07044a754b95a33b" ?<ListItem
+                {this.userToken === "5f60d9eb07044a754b95a33b" ? <ListItem
                   button
                   onClick={() => redirectSet(routes.tokens(projectId))}
                   className={classNames(cn.menuItem, open ? '' : cn.menuItemColapsed, {
@@ -230,7 +230,7 @@ export class Menu extends React.Component {
                   </ListItemIcon>
                   <div className={`${cn.menuItemText} text-one-line`}>Api keys</div>
                 </ListItem> : undefined}
-                {this.userToken === "5f60d9eb07044a754b95a33b" ?<ListItem
+                {this.userToken === "5f60d9eb07044a754b95a33b" ? <ListItem
                   button
                   onClick={() => redirectSet(routes.explorer(projectId))}
                   className={classNames(cn.menuItem, open ? '' : cn.menuItemColapsed, {
@@ -248,6 +248,26 @@ export class Menu extends React.Component {
                   </ListItemIcon>
                   <div className={`${cn.menuItemText} text-one-line`}>Api explorer</div>
                 </ListItem> : undefined}
+
+                {this.userToken === "5f60d9eb07044a754b95a33b" ? <ListItem
+                  button
+                  onClick={() => redirectSet(routes.users(projectId))}
+                  className={classNames(cn.menuItem, open ? '' : cn.menuItemColapsed, {
+                    selected: routes.isUsers(projectId),
+                  })}
+                >
+                  <ListItemIcon>
+                    <CircledIcon
+                      className={`${cn.menuItemAva} ${open ? '' : cn.menuItemAvaColapsed}`}
+                      size={open ? 44 : 36}
+                      color={colors.black.t5}
+                    >
+                      <Icon type="menu-item-explorer" size={open ? 22 : 20} color={colors.white.main} />
+                    </CircledIcon>
+                  </ListItemIcon>
+                  <div className={`${cn.menuItemText} text-one-line`}>Users</div>
+                </ListItem> : undefined}
+
               </List>
               <Loader />
             </div>
