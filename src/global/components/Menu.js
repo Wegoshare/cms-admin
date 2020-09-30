@@ -114,7 +114,7 @@ export class Menu extends React.Component {
                       size={open ? 44 : 36}
                       color={colors.black.t5}
                     >
-                      <Icon type="menu-item-dashboard" size={open ? 22 : 20} color={colors.white.main} />
+                      <Icon type="menu-item-home" size={open ? 22 : 20} color={colors.white.main} />
                     </CircledIcon>
                   </ListItemIcon>
                   <div className={`${cn.menuItemText} text-one-line`}>Home</div>
@@ -226,7 +226,7 @@ export class Menu extends React.Component {
                       size={open ? 44 : 36}
                       color={colors.black.t5}
                     >
-                      <Icon type="menu-item-explorer" size={open ? 22 : 20} color={colors.white.main} />
+                      <Icon type="menu-users" size={open ? 22 : 20} color={colors.white.main} />
                     </CircledIcon>
                   </ListItemIcon>
                   <div className={`${cn.menuItemText} text-one-line`}>Users</div>

@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { string, number } from 'prop-types'
 import { MdKeyboardArrowLeft as ArrowLeft } from 'react-icons/md'
 import { MdKeyboardArrowRight as ArrowRight } from 'react-icons/md'
-import { MdDashboard as Dashboard } from 'react-icons/md'
+import { FaHome } from 'react-icons/fa'
 import { FaCubes as Cubes } from 'react-icons/fa'
 import { FaEdit as Edit } from 'react-icons/fa'
 import { MdKeyboardArrowDown as ArrowDown } from 'react-icons/md'
@@ -33,7 +33,7 @@ const MAP = {
   'projects-add': Add,
   'menu-close': ArrowLeft,
   'menu-open': ArrowRight,
-  'menu-item-dashboard': Dashboard,
+  'menu-item-home': FaHome,
   'menu-item-models': Cubes,
   'menu-item-content': Edit,
   'menu-item-content-open': ArrowDown,
