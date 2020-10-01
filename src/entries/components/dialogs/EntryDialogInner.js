@@ -60,7 +60,6 @@ export class EntryDialogInner extends Component {
   }
 
   initString(model, value) {
-    console.log("init string", model, value)
     const isTypeCorrect = this.isTypeCorrect(model, value)
     return {
       model: model,
@@ -427,7 +426,6 @@ export class EntryDialogInner extends Component {
   onDone() {
     const { onDone, model, entry } = this.props
     const { control, identificator } = this.state
-    console.log(control)
     const valid = this.validate(control)
     if (!valid) return this.setState({ control })
     onDone(
