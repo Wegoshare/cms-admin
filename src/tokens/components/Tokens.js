@@ -107,16 +107,16 @@ class ATokens extends Component {
               </div>
             </div>
           ) : (
-            tokens.map(item => (
-              <Card
-                key={item.id}
-                title={item.name}
-                labels={[`#${item.token}`]}
-                onEdit={() => onEdit(item)}
-                onDelete={() => onDelete(item.id)}
-              />
-            ))
-          )}
+                tokens.map(item => (
+                  <Card
+                    key={item.id}
+                    title={item.name}
+                    labels={[`${item.token}`]}
+                    onEdit={() => onEdit(item)}
+                    onDelete={() => onDelete(item.id)}
+                  />
+                ))
+              )}
         </Content>
       </div>
     )
