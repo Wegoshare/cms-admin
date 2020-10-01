@@ -7,10 +7,13 @@ import { Typography } from 'src/lib/components/Typography'
 import { colors } from 'src/colors'
 import { Icon } from 'src/lib/components/Icon'
 import { Tooltip } from 'material-ui'
+import store from 'store'
 
 import { cn } from './Card.style'
 
 export class Card extends Component {
+  static userToken
+
   static propTypes = {
     backgroundColor: string.isRequired,
     icon: node.isRequired,
@@ -34,6 +37,7 @@ export class Card extends Component {
   }
 
   render() {
+    this.userToken = store.get('token')
     const {
       children,
       icon,
@@ -85,9 +89,9 @@ export class Card extends Component {
                       Edit
                     </Button>
                   </span>
-                  <Button size="sm" color="accent" onClick={onDelete}>
+                  {this.userToken === "5f60d9eb07044a754b95a33b" ? <Button size="sm" color="accent" onClick={onDelete} >
                     Delete
-                  </Button>
+                  </Button> : undefined}
                 </div>
               </div>
             </div>
