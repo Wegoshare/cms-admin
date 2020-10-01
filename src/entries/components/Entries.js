@@ -21,8 +21,10 @@ import { onEditDialogDone } from 'src/entries/actions/onEditDialogDone'
 import { onEditEntry } from 'src/entries/actions/onEditEntry'
 import { onConfirmDialogConfirm } from 'src/entries/actions/onConfirmDialogConfirm'
 import { routes } from 'src/lib/services/Routes'
+import store from 'store'
 
 class AEntries extends Component {
+  static userToken
   static propTypes = {
     match: shape({
       params: shape({
@@ -68,6 +70,7 @@ class AEntries extends Component {
     const model = this.getModel()
     if (!model) return <Redirect to={routes.notFound()} />
     const entries = this.getEntries()
+    this.userToken = store.get('token')
     const {
       conflicts,
       dialogs,
@@ -111,10 +114,11 @@ class AEntries extends Component {
           entries={allEntries}
         />
         <Header>
-          <Button color="primary" onClick={() => onAddEntry(model)}>
+          {this.userToken === "5f60d9eb07044a754b95a33b" ? <Button color="primary" onClick={() => onAddEntry(model)}>
             <Icon type="models-header-add" />
             <div className="pl-xs">Add entry</div>
-          </Button>
+          </Button> : undefined}
+
         </Header>
         <Content>
           {!entries.length ? (
@@ -127,18 +131,18 @@ class AEntries extends Component {
               </div>
             </div>
           ) : (
-            entries.map((entry, i) => (
-              <CardFactory
-                key={entry.id}
-                model={model}
-                entry={entry}
-                entries={allEntries}
-                conflict={conflicts.find(conflict => conflict.id === entry.id).conflict}
-                onEdit={() => onEditEntry(entry, model)}
-                onDelete={() => onDeleteEntry(entry.id)}
-              />
-            ))
-          )}
+              entries.map((entry, i) => (
+                <CardFactory
+                  key={entry.id}
+                  model={model}
+                  entry={entry}
+                  entries={allEntries}
+                  conflict={conflicts.find(conflict => conflict.id === entry.id).conflict}
+                  onEdit={() => onEditEntry(entry, model)}
+                  onDelete={() => onDeleteEntry(entry.id)}
+                />
+              ))
+            )}
         </Content>
       </div>
     )
