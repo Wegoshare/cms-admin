@@ -10,8 +10,10 @@ import { validate } from 'src/lib/services/Validator'
 import { isNumber } from 'src/lib/helpers/isNumber'
 import { sortKeys } from 'src/lib/helpers/sortKeys'
 import { TextField } from 'src/lib/components/fields/TextField'
+import store from 'store'
 
 export class EntryDialogInner extends Component {
+  static userToken
   static propTypes = {
     onDone: func.isRequired,
     onClose: func.isRequired,
@@ -444,6 +446,7 @@ export class EntryDialogInner extends Component {
   }
 
   render() {
+    this.userToken = store.get('token')
     const { onClose, model } = this.props
     const { value, error, controls, options } = this.state.control
     const { identificator } = this.state
@@ -452,12 +455,12 @@ export class EntryDialogInner extends Component {
         <DialogContent>
           <div className="mb-xl pb-sm">
             <TextField
-              label="Entry identificator"
+              label="Identificator"
               onChange={value => this.setState({ identificator: value })}
               onBlur={() => { }}
               value={identificator}
               error={false}
-              helperText="This will help to distinguish one entry from another."
+              disabled={this.userToken === "5f60d9eb07044a754b95a33b" ? false : true}
             />
           </div>
           <ControlFactory
