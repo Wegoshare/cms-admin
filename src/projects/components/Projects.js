@@ -30,7 +30,6 @@ import { ErrorContainer } from 'src/global/components/ErrorContainer'
 import { onLogoutClick } from 'src/projects/actions/onLogoutClick'
 import { PageContainer } from 'src/lib/components/PageContainer'
 import store from 'store'
-import logo from '../assets/logo.png'
 
 import { cn } from './Projects.style'
 
@@ -138,7 +137,7 @@ class AProjects extends Component {
                 <Grid item xs={12} sm={6} md={3} key={project.id}>
                   <div className={cn.card}>
                     <div className={cn.cardBody} onClick={() => redirectSet(routes.index(project.id))}>
-                      <Avatar src={'http://nexus.wegoshare.com:8081/repository/public/systems-img/' + project.name + '.png'} alt="Project avatar" className={cn.avatar} />
+                      <Avatar src={'./../assets/' + project.name + '.png'} alt="Project avatar" className={cn.avatar} />
                       <div className="mt-md pt-sm">
                         <Typography type="lg" className="text-one-line">
                           {project.name}
