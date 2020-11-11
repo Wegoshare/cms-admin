@@ -31,7 +31,7 @@ import { onLogoutClick } from 'src/projects/actions/onLogoutClick'
 import { PageContainer } from 'src/lib/components/PageContainer'
 import store from 'store'
 import logoQa from '../assets/qa.png'
-import logoGhost from '../assets/qa.png'
+import logoGhost from '../assets/ghost.png'
 
 import { cn } from './Projects.style'
 
@@ -140,8 +140,7 @@ class AProjects extends Component {
                   <div className={cn.card}>
                     <div className={cn.cardBody} onClick={() => redirectSet(routes.index(project.id))}>
                       {project.name === 'qa' && <Avatar src={logoQa} alt="Project avatar" className={cn.avatar} />}
-                      {project.name === 'ghost' && <Avatar src={logoGhost} alt="Project avatar" className={cn.avatar} />}
-                      }
+                      {project.name === 'ghost' ? <Avatar src={logoGhost} alt="Project avatar" className={cn.avatar} />}
                       <div className="mt-md pt-sm">
                         <Typography type="lg" className="text-one-line">
                           {project.name}
