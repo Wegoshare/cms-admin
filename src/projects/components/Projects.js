@@ -32,6 +32,21 @@ import { PageContainer } from 'src/lib/components/PageContainer'
 import store from 'store'
 import logoQa from '../assets/qa.png'
 import logoGhost from '../assets/ghost.png'
+import logoBorken from '../assets/borken.png'
+import logoColumbia from '../assets/columbia.png'
+import logoDemo from '../assets/demo.png'
+import logoEdinburgh from '../assets/edinburgh.png'
+import logoForthValley from '../assets/forthvalley.png'
+import logoHowardCounty from '../assets/howardcounty.png'
+import logoInverness from '../assets/inverness.png'
+import logoLagoa from '../assets/lagoa.png'
+import logoRaleigh from '../assets/raleigh.png'
+import logoRichmond from '../assets/richmond.png'
+import logoRioMaior from '../assets/riomaior.png'
+import logoStCharles from '../assets/stcharles.png'
+import logoSummitCounty from '../assets/summitcounty.png'
+import logoTartu from '../assets/tartu.png'
+import logoValley from '../assets/valley.png'
 
 import { cn } from './Projects.style'
 
@@ -141,6 +156,21 @@ class AProjects extends Component {
                     <div className={cn.cardBody} onClick={() => redirectSet(routes.index(project.id))}>
                       {project.name === 'qa' && <Avatar src={logoQa} alt="Project avatar" className={cn.avatar} />}
                       {project.name === 'ghost' && <Avatar src={logoGhost} alt="Project avatar" className={cn.avatar} />}
+                      {project.name === 'Borken' && <Avatar src={logoBorken} alt="Project avatar" className={cn.avatar} />}
+                      {project.name === 'Columbia' && <Avatar src={logoColumbia} alt="Project avatar" className={cn.avatar} />}
+                      {project.name === 'Demo' && <Avatar src={logoDemo} alt="Project avatar" className={cn.avatar} />}
+                      {project.name === 'Edinburgh' && <Avatar src={logoEdinburgh} alt="Project avatar" className={cn.avatar} />}
+                      {project.name === 'Forth Valley' && <Avatar src={logoForthValley} alt="Project avatar" className={cn.avatar} />}
+                      {project.name === 'Howard County' && <Avatar src={logoHowardCounty} alt="Project avatar" className={cn.avatar} />}
+                      {project.name === 'Inverness' && <Avatar src={logoInverness} alt="Project avatar" className={cn.avatar} />}
+                      {project.name === 'Lagoa' && <Avatar src={logoLagoa} alt="Project avatar" className={cn.avatar} />}
+                      {project.name === 'Raleigh' && <Avatar src={logoRaleigh} alt="Project avatar" className={cn.avatar} />}
+                      {project.name === 'Richmond' && <Avatar src={logoRichmond} alt="Project avatar" className={cn.avatar} />}
+                      {project.name === 'Rio Maior' && <Avatar src={logoRioMaior} alt="Project avatar" className={cn.avatar} />}
+                      {project.name === 'St. Charles' && <Avatar src={logoStCharles} alt="Project avatar" className={cn.avatar} />}
+                      {project.name === 'Summit County' && <Avatar src={logoSummitCounty} alt="Project avatar" className={cn.avatar} />}
+                      {project.name === 'Tartu' && <Avatar src={logoTartu} alt="Project avatar" className={cn.avatar} />}
+                      {project.name === 'Valley' && <Avatar src={logoValley} alt="Project avatar" className={cn.avatar} />}
                       <div className="mt-md pt-sm">
                         <Typography type="lg" className="text-one-line">
                           {project.name}
