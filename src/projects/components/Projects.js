@@ -140,7 +140,7 @@ class AProjects extends Component {
                   <div className={cn.card}>
                     <div className={cn.cardBody} onClick={() => redirectSet(routes.index(project.id))}>
                       {project.name === 'qa' && <Avatar src={logoQa} alt="Project avatar" className={cn.avatar} />}
-                      {project.name === 'ghost' ? <Avatar src={logoGhost} alt="Project avatar" className={cn.avatar} />}
+                      {project.name === 'ghost' && <Avatar src={logoGhost} alt="Project avatar" className={cn.avatar} />}
                       <div className="mt-md pt-sm">
                         <Typography type="lg" className="text-one-line">
                           {project.name}
