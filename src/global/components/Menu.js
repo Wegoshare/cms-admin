@@ -14,6 +14,9 @@ import { Loader } from 'src/global/components/Loader'
 import { routes } from 'src/lib/services/Routes'
 import store from 'store'
 
+import { cn } from './Menu.style'
+
+import logoTemplates from '../../projects/assets/templates.png'
 import logoQa from '../../projects/assets/qa.png'
 import logoGhost from '../../projects/assets/ghost.png'
 import logoBorken from '../../projects/assets/borken.png'
@@ -32,7 +35,6 @@ import logoSummitCounty from '../../projects/assets/summitcounty.png'
 import logoTartu from '../../projects/assets/tartu.png'
 import logoValley from '../../projects/assets/valley.png'
 
-import { cn } from './Menu.style'
 
 export class Menu extends React.Component {
   static userToken
@@ -107,25 +109,24 @@ export class Menu extends React.Component {
             <div className={cn.menuInner}>
               <List className={cn.menuHeader} onClick={() => redirectSet(routes.projects())}>
                 <ListItem className={cn.menuHeaderInner}>
-                  <ListItemIcon>
-                    {project.name === 'qa' && <Avatar src={logoQa} alt="Project avatar" className={open ? cn.avatarBig : cn.avatarSmall} />}
-                    {project.name === 'ghost' && <Avatar src={logoGhost} alt="Project avatar" className={open ? cn.avatarBig : cn.avatarSmall} />}
-                    {project.name === 'Borken' && <Avatar src={logoBorken} alt="Project avatar" className={open ? cn.avatarBig : cn.avatarSmall} />}
-                    {project.name === 'Columbia' && <Avatar src={logoColumbia} alt="Project avatar" className={open ? cn.avatarBig : cn.avatarSmall} />}
-                    {project.name === 'Demo' && <Avatar src={logoDemo} alt="Project avatar" className={open ? cn.avatarBig : cn.avatarSmall} />}
-                    {project.name === 'Edinburgh' && <Avatar src={logoEdinburgh} alt="Project avatar" className={open ? cn.avatarBig : cn.avatarSmall} />}
-                    {project.name === 'Forth Valley' && <Avatar src={logoForthValley} alt="Project avatar" className={open ? cn.avatarBig : cn.avatarSmall} />}
-                    {project.name === 'Howard County' && <Avatar src={logoHowardCounty} alt="Project avatar" className={open ? cn.avatarBig : cn.avatarSmall} />}
-                    {project.name === 'Inverness' && <Avatar src={logoInverness} alt="Project avatar" className={open ? cn.avatarBig : cn.avatarSmall} />}
-                    {project.name === 'Lagoa' && <Avatar src={logoLagoa} alt="Project avatar" className={open ? cn.avatarBig : cn.avatarSmall} />}
-                    {project.name === 'Raleigh' && <Avatar src={logoRaleigh} alt="Project avatar" className={open ? cn.avatarBig : cn.avatarSmall} />}
-                    {project.name === 'Richmond' && <Avatar src={logoRichmond} alt="Project avatar" className={open ? cn.avatarBig : cn.avatarSmall} />}
-                    {project.name === 'Rio Maior' && <Avatar src={logoRioMaior} alt="Project avatar" className={open ? cn.avatarBig : cn.avatarSmall} />}
-                    {project.name === 'St. Charles' && <Avatar src={logoStCharles} alt="Project avatar" className={open ? cn.avatarBig : cn.avatarSmall} />}
-                    {project.name === 'Summit County' && <Avatar src={logoSummitCounty} alt="Project avatar" className={open ? cn.avatarBig : cn.avatarSmall} />}
-                    {project.name === 'Tartu' && <Avatar src={logoTartu} alt="Project avatar" className={open ? cn.avatarBig : cn.avatarSmall} />}
-                    {project.name === 'Valley' && <Avatar src={logoValley} alt="Project avatar" className={open ? cn.avatarBig : cn.avatarSmall} />}
-                  </ListItemIcon>
+                  {project.name === 'TEMPLATES' && <ListItemIcon><Avatar src={logoQa} alt="Project avatar" className={open ? cn.avatarBig : cn.avatarSmall} /></ListItemIcon>}
+                  {project.name === 'qa' && <ListItemIcon><Avatar src={logoQa} alt="Project avatar" className={open ? cn.avatarBig : cn.avatarSmall} /></ListItemIcon>}
+                  {project.name === 'ghost' && <ListItemIcon><Avatar src={logoGhost} alt="Project avatar" className={open ? cn.avatarBig : cn.avatarSmall} /></ListItemIcon>}
+                  {project.name === 'Borken' && <ListItemIcon><Avatar src={logoBorken} alt="Project avatar" className={open ? cn.avatarBig : cn.avatarSmall} /></ListItemIcon>}
+                  {project.name === 'Columbia' && <ListItemIcon><Avatar src={logoColumbia} alt="Project avatar" className={open ? cn.avatarBig : cn.avatarSmall} /></ListItemIcon>}
+                  {project.name === 'Demo' && <ListItemIcon><Avatar src={logoDemo} alt="Project avatar" className={open ? cn.avatarBig : cn.avatarSmall} /></ListItemIcon>}
+                  {project.name === 'Edinburgh' && <ListItemIcon><Avatar src={logoEdinburgh} alt="Project avatar" className={open ? cn.avatarBig : cn.avatarSmall} /></ListItemIcon>}
+                  {project.name === 'Forth Valley' && <ListItemIcon><Avatar src={logoForthValley} alt="Project avatar" className={open ? cn.avatarBig : cn.avatarSmall} /></ListItemIcon>}
+                  {project.name === 'Howard County' && <ListItemIcon><Avatar src={logoHowardCounty} alt="Project avatar" className={open ? cn.avatarBig : cn.avatarSmall} /></ListItemIcon>}
+                  {project.name === 'Inverness' && <ListItemIcon><Avatar src={logoInverness} alt="Project avatar" className={open ? cn.avatarBig : cn.avatarSmall} /></ListItemIcon>}
+                  {project.name === 'Lagoa' && <ListItemIcon><Avatar src={logoLagoa} alt="Project avatar" className={open ? cn.avatarBig : cn.avatarSmall} /></ListItemIcon>}
+                  {project.name === 'Raleigh' && <ListItemIcon><Avatar src={logoRaleigh} alt="Project avatar" className={open ? cn.avatarBig : cn.avatarSmall} /></ListItemIcon>}
+                  {project.name === 'Richmond' && <ListItemIcon><Avatar src={logoRichmond} alt="Project avatar" className={open ? cn.avatarBig : cn.avatarSmall} /></ListItemIcon>}
+                  {project.name === 'Rio Maior' && <ListItemIcon><Avatar src={logoRioMaior} alt="Project avatar" className={open ? cn.avatarBig : cn.avatarSmall} /></ListItemIcon>}
+                  {project.name === 'St. Charles' && <ListItemIcon><Avatar src={logoStCharles} alt="Project avatar" className={open ? cn.avatarBig : cn.avatarSmall} /></ListItemIcon>}
+                  {project.name === 'Summit County' && <ListItemIcon><Avatar src={logoSummitCounty} alt="Project avatar" className={open ? cn.avatarBig : cn.avatarSmall} /></ListItemIcon>}
+                  {project.name === 'Tartu' && <ListItemIcon><Avatar src={logoTartu} alt="Project avatar" className={open ? cn.avatarBig : cn.avatarSmall} /></ListItemIcon>}
+                  {project.name === 'Valley' && <ListItemIcon><Avatar src={logoValley} alt="Project avatar" className={open ? cn.avatarBig : cn.avatarSmall} /></ListItemIcon>}
                   <div className={`${cn.pojectName} text-one-line`}>{project.name}</div>
                 </ListItem>
               </List>
