@@ -30,6 +30,7 @@ import { ErrorContainer } from 'src/global/components/ErrorContainer'
 import { onLogoutClick } from 'src/projects/actions/onLogoutClick'
 import { PageContainer } from 'src/lib/components/PageContainer'
 import store from 'store'
+
 import logoQa from '../assets/qa.png'
 import logoGhost from '../assets/ghost.png'
 import logoBorken from '../assets/borken.png'

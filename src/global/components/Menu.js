@@ -14,6 +14,24 @@ import { Loader } from 'src/global/components/Loader'
 import { routes } from 'src/lib/services/Routes'
 import store from 'store'
 
+import logoQa from '../../projects/assets/qa.png'
+import logoGhost from '../../projects/assets/ghost.png'
+import logoBorken from '../../projects/assets/borken.png'
+import logoColumbia from '../../projects/assets/columbia.png'
+import logoDemo from '../../projects/assets/demo.png'
+import logoEdinburgh from '../../projects/assets/edinburgh.png'
+import logoForthValley from '../../projects/assets/forthvalley.png'
+import logoHowardCounty from '../../projects/assets/howardcounty.png'
+import logoInverness from '../../projects/assets/inverness.png'
+import logoLagoa from '../../projects/assets/lagoa.png'
+import logoRaleigh from '../../projects/assets/raleigh.png'
+import logoRichmond from '../../projects/assets/richmond.png'
+import logoRioMaior from '../../projects/assets/riomaior.png'
+import logoStCharles from '../../projects/assets/stcharles.png'
+import logoSummitCounty from '../../projects/assets/summitcounty.png'
+import logoTartu from '../../projects/assets/tartu.png'
+import logoValley from '../../projects/assets/valley.png'
+
 import { cn } from './Menu.style'
 
 export class Menu extends React.Component {
@@ -90,11 +108,23 @@ export class Menu extends React.Component {
               <List className={cn.menuHeader} onClick={() => redirectSet(routes.projects())}>
                 <ListItem className={cn.menuHeaderInner}>
                   <ListItemIcon>
-                    <Avatar
-                      src={project.image}
-                      alt="Project avatar"
-                      className={open ? cn.avatarBig : cn.avatarSmall}
-                    />
+                    {project.name === 'qa' && <Avatar src={logoQa} alt="Project avatar" className={open ? cn.avatarBig : cn.avatarSmall} />}
+                    {project.name === 'ghost' && <Avatar src={logoGhost} alt="Project avatar" className={open ? cn.avatarBig : cn.avatarSmall} />}
+                    {project.name === 'Borken' && <Avatar src={logoBorken} alt="Project avatar" className={open ? cn.avatarBig : cn.avatarSmall} />}
+                    {project.name === 'Columbia' && <Avatar src={logoColumbia} alt="Project avatar" className={open ? cn.avatarBig : cn.avatarSmall} />}
+                    {project.name === 'Demo' && <Avatar src={logoDemo} alt="Project avatar" className={open ? cn.avatarBig : cn.avatarSmall} />}
+                    {project.name === 'Edinburgh' && <Avatar src={logoEdinburgh} alt="Project avatar" className={open ? cn.avatarBig : cn.avatarSmall} />}
+                    {project.name === 'Forth Valley' && <Avatar src={logoForthValley} alt="Project avatar" className={open ? cn.avatarBig : cn.avatarSmall} />}
+                    {project.name === 'Howard County' && <Avatar src={logoHowardCounty} alt="Project avatar" className={open ? cn.avatarBig : cn.avatarSmall} />}
+                    {project.name === 'Inverness' && <Avatar src={logoInverness} alt="Project avatar" className={open ? cn.avatarBig : cn.avatarSmall} />}
+                    {project.name === 'Lagoa' && <Avatar src={logoLagoa} alt="Project avatar" className={open ? cn.avatarBig : cn.avatarSmall} />}
+                    {project.name === 'Raleigh' && <Avatar src={logoRaleigh} alt="Project avatar" className={open ? cn.avatarBig : cn.avatarSmall} />}
+                    {project.name === 'Richmond' && <Avatar src={logoRichmond} alt="Project avatar" className={open ? cn.avatarBig : cn.avatarSmall} />}
+                    {project.name === 'Rio Maior' && <Avatar src={logoRioMaior} alt="Project avatar" className={open ? cn.avatarBig : cn.avatarSmall} />}
+                    {project.name === 'St. Charles' && <Avatar src={logoStCharles} alt="Project avatar" className={open ? cn.avatarBig : cn.avatarSmall} />}
+                    {project.name === 'Summit County' && <Avatar src={logoSummitCounty} alt="Project avatar" className={open ? cn.avatarBig : cn.avatarSmall} />}
+                    {project.name === 'Tartu' && <Avatar src={logoTartu} alt="Project avatar" className={open ? cn.avatarBig : cn.avatarSmall} />}
+                    {project.name === 'Valley' && <Avatar src={logoValley} alt="Project avatar" className={open ? cn.avatarBig : cn.avatarSmall} />}
                   </ListItemIcon>
                   <div className={`${cn.pojectName} text-one-line`}>{project.name}</div>
                 </ListItem>
