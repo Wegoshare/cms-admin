@@ -155,21 +155,22 @@ class AProjects extends Component {
                 <Grid item xs={12} sm={6} md={3} key={project.id}>
                   <div className={cn.card}>
                     <div className={cn.cardBody} onClick={() => redirectSet(routes.index(project.id))}>
-                      {project.name === 'qa' && <Avatar src={logoQa} alt="Project avatar" className={cn.avatar} />}
-                      {project.name === 'ghost' && <Avatar src={logoGhost} alt="Project avatar" className={cn.avatar} />}
+                      {project.name === 'Template' && <Avatar src={logoQa} alt="Project avatar" className={cn.avatar} />}
+                      {project.name === 'QA' && <Avatar src={logoQa} alt="Project avatar" className={cn.avatar} />}
+                      {project.name === 'Ghost' && <Avatar src={logoGhost} alt="Project avatar" className={cn.avatar} />}
                       {project.name === 'Borken' && <Avatar src={logoBorken} alt="Project avatar" className={cn.avatar} />}
                       {project.name === 'Columbia' && <Avatar src={logoColumbia} alt="Project avatar" className={cn.avatar} />}
                       {project.name === 'Demo' && <Avatar src={logoDemo} alt="Project avatar" className={cn.avatar} />}
                       {project.name === 'Edinburgh' && <Avatar src={logoEdinburgh} alt="Project avatar" className={cn.avatar} />}
-                      {project.name === 'Forth Valley' && <Avatar src={logoForthValley} alt="Project avatar" className={cn.avatar} />}
-                      {project.name === 'Howard County' && <Avatar src={logoHowardCounty} alt="Project avatar" className={cn.avatar} />}
+                      {project.name === 'ForthValley' && <Avatar src={logoForthValley} alt="Project avatar" className={cn.avatar} />}
+                      {project.name === 'HowardCounty' && <Avatar src={logoHowardCounty} alt="Project avatar" className={cn.avatar} />}
                       {project.name === 'Inverness' && <Avatar src={logoInverness} alt="Project avatar" className={cn.avatar} />}
                       {project.name === 'Lagoa' && <Avatar src={logoLagoa} alt="Project avatar" className={cn.avatar} />}
                       {project.name === 'Raleigh' && <Avatar src={logoRaleigh} alt="Project avatar" className={cn.avatar} />}
                       {project.name === 'Richmond' && <Avatar src={logoRichmond} alt="Project avatar" className={cn.avatar} />}
-                      {project.name === 'Rio Maior' && <Avatar src={logoRioMaior} alt="Project avatar" className={cn.avatar} />}
-                      {project.name === 'St. Charles' && <Avatar src={logoStCharles} alt="Project avatar" className={cn.avatar} />}
-                      {project.name === 'Summit County' && <Avatar src={logoSummitCounty} alt="Project avatar" className={cn.avatar} />}
+                      {project.name === 'RioMaior' && <Avatar src={logoRioMaior} alt="Project avatar" className={cn.avatar} />}
+                      {project.name === 'StCharles' && <Avatar src={logoStCharles} alt="Project avatar" className={cn.avatar} />}
+                      {project.name === 'SummitCounty' && <Avatar src={logoSummitCounty} alt="Project avatar" className={cn.avatar} />}
                       {project.name === 'Tartu' && <Avatar src={logoTartu} alt="Project avatar" className={cn.avatar} />}
                       {project.name === 'Valley' && <Avatar src={logoValley} alt="Project avatar" className={cn.avatar} />}
                       <div className="mt-md pt-sm">
