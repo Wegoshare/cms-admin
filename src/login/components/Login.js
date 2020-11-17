@@ -77,7 +77,7 @@ class ALogin extends Component {
             </Typography>
             <div className="pb-sm">
               <TextField
-                label="E-mail"
+                label="Username"
                 onChange={value => this.onChange('login', value)}
                 onBlur={() => this.onBlur('login')}
                 value={login}
