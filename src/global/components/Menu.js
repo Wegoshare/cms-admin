@@ -126,7 +126,7 @@ export class Menu extends React.Component {
                   {project.name === 'StCharles' && <ListItemIcon><Avatar src={logoStCharles} alt="Project avatar" className={open ? cn.avatarBig : cn.avatarSmall} /></ListItemIcon>}
                   {project.name === 'SummitCounty' && <ListItemIcon><Avatar src={logoSummitCounty} alt="Project avatar" className={open ? cn.avatarBig : cn.avatarSmall} /></ListItemIcon>}
                   {project.name === 'Tartu' && <ListItemIcon><Avatar src={logoTartu} alt="Project avatar" className={open ? cn.avatarBig : cn.avatarSmall} /></ListItemIcon>}
-                  {project.name === 'PioneerValley' && <ListItemIcon><Avatar src={logoValley} alt="Project avatar" className={open ? cn.avatarBig : cn.avatarSmall} /></ListItemIcon>}
+                  {project.name === 'Valley' && <ListItemIcon><Avatar src={logoValley} alt="Project avatar" className={open ? cn.avatarBig : cn.avatarSmall} /></ListItemIcon>}
 		  {project.name === 'Vail' && <ListItemIcon><Avatar src={logoVail} alt="Project avatar" className={open ? cn.avatarBig : cn.avatarSmall} /></ListItemIcon>}
                   <div className={`${cn.pojectName} text-one-line`}>{project.name}</div>
                 </ListItem>
