@@ -34,7 +34,7 @@ import logoStCharles from '../../projects/assets/stcharles.png'
 import logoSummitCounty from '../../projects/assets/summitcounty.png'
 import logoTartu from '../../projects/assets/tartu.png'
 import logoValley from '../../projects/assets/valley.png'
-
+import logoVail from '../../projects/assets/vail.png'
 
 export class Menu extends React.Component {
   static userToken
@@ -127,6 +127,7 @@ export class Menu extends React.Component {
                   {project.name === 'SummitCounty' && <ListItemIcon><Avatar src={logoSummitCounty} alt="Project avatar" className={open ? cn.avatarBig : cn.avatarSmall} /></ListItemIcon>}
                   {project.name === 'Tartu' && <ListItemIcon><Avatar src={logoTartu} alt="Project avatar" className={open ? cn.avatarBig : cn.avatarSmall} /></ListItemIcon>}
                   {project.name === 'PioneerValley' && <ListItemIcon><Avatar src={logoValley} alt="Project avatar" className={open ? cn.avatarBig : cn.avatarSmall} /></ListItemIcon>}
+		  {project.name === 'Vail' && <ListItemIcon><Avatar src={logoVail} alt="Project avatar" className={open ? cn.avatarBig : cn.avatarSmall} /></ListItemIcon>}
                   <div className={`${cn.pojectName} text-one-line`}>{project.name}</div>
                 </ListItem>
               </List>

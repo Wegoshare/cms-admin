@@ -48,6 +48,7 @@ import logoStCharles from '../assets/stcharles.png'
 import logoSummitCounty from '../assets/summitcounty.png'
 import logoTartu from '../assets/tartu.png'
 import logoValley from '../assets/valley.png'
+import logoVail from '../assets/vail.png'
 
 import { cn } from './Projects.style'
 
@@ -173,6 +174,8 @@ class AProjects extends Component {
                       {project.name === 'SummitCounty' && <Avatar src={logoSummitCounty} alt="Project avatar" className={cn.avatar} />}
                       {project.name === 'Tartu' && <Avatar src={logoTartu} alt="Project avatar" className={cn.avatar} />}
                       {project.name === 'Valley' && <Avatar src={logoValley} alt="Project avatar" className={cn.avatar} />}
+                      {project.name === 'Vail' && <Avatar src={logoVail} alt="Project avatar" className={cn.avatar} />}
+
                       <div className="mt-md pt-sm">
                         <Typography type="lg" className="text-one-line">
                           {project.name}
