@@ -47,6 +47,7 @@ import logoRioMaior from '../assets/riomaior.png'
 import logoStCharles from '../assets/stcharles.png'
 import logoSummitCounty from '../assets/summitcounty.png'
 import logoTartu from '../assets/tartu.png'
+import logoFigueira from '../assets/figueira.png'
 import logoValley from '../assets/valley.png'
 import logoVail from '../assets/vail.png'
 
@@ -173,6 +174,7 @@ class AProjects extends Component {
                       {project.name === 'StCharles' && <Avatar src={logoStCharles} alt="Project avatar" className={cn.avatar} />}
                       {project.name === 'SummitCounty' && <Avatar src={logoSummitCounty} alt="Project avatar" className={cn.avatar} />}
                       {project.name === 'Tartu' && <Avatar src={logoTartu} alt="Project avatar" className={cn.avatar} />}
+                      {project.name === 'Figueira' && <Avatar src={logoFigueira} alt="Project avatar" className={cn.avatar} />}
                       {project.name === 'Valley' && <Avatar src={logoValley} alt="Project avatar" className={cn.avatar} />}
                       {project.name === 'Vail' && <Avatar src={logoVail} alt="Project avatar" className={cn.avatar} />}
 
