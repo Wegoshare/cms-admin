@@ -50,6 +50,7 @@ import logoTartu from '../assets/tartu.png'
 import logoFigueira from '../assets/figueira.png'
 import logoValley from '../assets/valley.png'
 import logoVail from '../assets/vail.png'
+import logoAnnouncements from '../assets/announcements.png'
 
 import { cn } from './Projects.style'
 
@@ -177,6 +178,7 @@ class AProjects extends Component {
                       {project.name === 'Figueira' && <Avatar src={logoFigueira} alt="Project avatar" className={cn.avatar} />}
                       {project.name === 'Valley' && <Avatar src={logoValley} alt="Project avatar" className={cn.avatar} />}
                       {project.name === 'Vail' && <Avatar src={logoVail} alt="Project avatar" className={cn.avatar} />}
+                      {project.name === 'Announcements' && <Avatar src={logoAnnouncements} alt="Project avatar" className={cn.avatar} />}
 
                       <div className="mt-md pt-sm">
                         <Typography type="lg" className="text-one-line">
