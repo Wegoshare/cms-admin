@@ -37,6 +37,7 @@ import logoTartu from '../../projects/assets/tartu.png'
 import logoValley from '../../projects/assets/valley.png'
 import logoVail from '../../projects/assets/vail.png'
 import logoAnnouncements from '../../projects/assets/announcements.png'
+import logoAlmeirim from '../../projects/assets/almeirim.png'
 
 
 export class Menu extends React.Component {
@@ -133,6 +134,7 @@ export class Menu extends React.Component {
                   {project.name === 'Valley' && <ListItemIcon><Avatar src={logoValley} alt="Project avatar" className={open ? cn.avatarBig : cn.avatarSmall} /></ListItemIcon>}
 		              {project.name === 'Vail' && <ListItemIcon><Avatar src={logoVail} alt="Project avatar" className={open ? cn.avatarBig : cn.avatarSmall} /></ListItemIcon>}
                   {project.name === 'Announcements' && <ListItemIcon><Avatar src={logoAnnouncements} alt="Project avatar" className={open ? cn.avatarBig : cn.avatarSmall} /></ListItemIcon>}
+                  {project.name === 'Almeirim' && <ListItemIcon><Avatar src={logoAlmeirim} alt="Project avatar" className={open ? cn.avatarBig : cn.avatarSmall} /></ListItemIcon>}
 
                   <div className={`${cn.pojectName} text-one-line`}>{project.name}</div>
                 </ListItem>
