@@ -36,6 +36,7 @@ import logoGhost from '../assets/ghost.png'
 import logoBorken from '../assets/borken.png'
 import logoColumbia from '../assets/columbia.png'
 import logoDemo from '../assets/demo.png'
+import logoPapagayo from '../assets/papagayo.png'
 import logoEdinburgh from '../assets/edinburgh.png'
 import logoForthValley from '../assets/forthvalley.png'
 import logoHowardCounty from '../assets/howardcounty.png'
@@ -165,6 +166,7 @@ class AProjects extends Component {
                       {project.name === 'Borken' && <Avatar src={logoBorken} alt="Project avatar" className={cn.avatar} />}
                       {project.name === 'Columbia' && <Avatar src={logoColumbia} alt="Project avatar" className={cn.avatar} />}
                       {project.name === 'Demo' && <Avatar src={logoDemo} alt="Project avatar" className={cn.avatar} />}
+                      {project.name === 'Papagayo' && <Avatar src={logoPapagayo} alt="Project avatar" className={cn.avatar} />}
                       {project.name === 'Edinburgh' && <Avatar src={logoEdinburgh} alt="Project avatar" className={cn.avatar} />}
                       {project.name === 'ForthValley' && <Avatar src={logoForthValley} alt="Project avatar" className={cn.avatar} />}
                       {project.name === 'HowardCounty' && <Avatar src={logoHowardCounty} alt="Project avatar" className={cn.avatar} />}
