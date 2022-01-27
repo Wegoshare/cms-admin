@@ -40,6 +40,10 @@ import logoVail from '../../projects/assets/vail.png'
 import logoAnnouncements from '../../projects/assets/announcements.png'
 import logoAlmeirim from '../../projects/assets/almeirim.png'
 
+import logoCoruche from '../../projects/assets/coruche.png'
+import logoValeLobo from '../../projects/assets/valelobo.png'
+import logoGuildford from '../../projects/assets/guildford.png'
+
 
 export class Menu extends React.Component {
   static userToken
@@ -137,6 +141,9 @@ export class Menu extends React.Component {
 		              {project.name === 'Vail' && <ListItemIcon><Avatar src={logoVail} alt="Project avatar" className={open ? cn.avatarBig : cn.avatarSmall} /></ListItemIcon>}
                   {project.name === 'Announcements' && <ListItemIcon><Avatar src={logoAnnouncements} alt="Project avatar" className={open ? cn.avatarBig : cn.avatarSmall} /></ListItemIcon>}
                   {project.name === 'Almeirim' && <ListItemIcon><Avatar src={logoAlmeirim} alt="Project avatar" className={open ? cn.avatarBig : cn.avatarSmall} /></ListItemIcon>}
+                  {project.name === 'Coruche' && <ListItemIcon><Avatar src={logoCoruche} alt="Project avatar" className={open ? cn.avatarBig : cn.avatarSmall} /></ListItemIcon>}
+                  {project.name === 'ValeLobo' && <ListItemIcon><Avatar src={logoValeLobo} alt="Project avatar" className={open ? cn.avatarBig : cn.avatarSmall} /></ListItemIcon>}
+                  {project.name === 'Guildford' && <ListItemIcon><Avatar src={logoGuildford} alt="Project avatar" className={open ? cn.avatarBig : cn.avatarSmall} /></ListItemIcon>}
 
                   <div className={`${cn.pojectName} text-one-line`}>{project.name}</div>
                 </ListItem>

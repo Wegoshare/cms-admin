@@ -53,6 +53,10 @@ import logoValley from '../assets/valley.png'
 import logoVail from '../assets/vail.png'
 import logoAnnouncements from '../assets/announcements.png'
 import logoAlmeirim from '../assets/almeirim.png'
+import logoCoruche from '../assets/coruche.png'
+import logoValeLobo from '../assets/valelobo.png'
+import logoGuildford from '../assets/guildford.png'
+
 
 import { cn } from './Projects.style'
 
@@ -183,6 +187,9 @@ class AProjects extends Component {
                       {project.name === 'Vail' && <Avatar src={logoVail} alt="Project avatar" className={cn.avatar} />}
                       {project.name === 'Announcements' && <Avatar src={logoAnnouncements} alt="Project avatar" className={cn.avatar} />}
                       {project.name === 'Almeirim' && <Avatar src={logoAlmeirim} alt="Project avatar" className={cn.avatar} />}
+                      {project.name === 'Coruche' && <Avatar src={logoCoruche} alt="Project avatar" className={cn.avatar} />}
+                      {project.name === 'ValeLobo' && <Avatar src={logoValeLobo} alt="Project avatar" className={cn.avatar} />}
+                      {project.name === 'Guildford' && <Avatar src={logoGuildford} alt="Project avatar" className={cn.avatar} />}
 
                       <div className="mt-md pt-sm">
                         <Typography type="lg" className="text-one-line">
