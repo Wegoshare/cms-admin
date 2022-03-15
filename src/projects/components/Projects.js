@@ -43,6 +43,7 @@ import logoHowardCounty from '../assets/howardcounty.png'
 import logoInverness from '../assets/inverness.png'
 import logoLagoa from '../assets/lagoa.png'
 import logoRaleigh from '../assets/raleigh.png'
+import logoRaleighV2 from '../assets/raleighv2.png'
 import logoRichmond from '../assets/richmond.png'
 import logoRioMaior from '../assets/riomaior.png'
 import logoStCharles from '../assets/stcharles.png'
@@ -178,6 +179,7 @@ class AProjects extends Component {
                       {project.name === 'Inverness' && <Avatar src={logoInverness} alt="Project avatar" className={cn.avatar} />}
                       {project.name === 'Lagoa' && <Avatar src={logoLagoa} alt="Project avatar" className={cn.avatar} />}
                       {project.name === 'Raleigh' && <Avatar src={logoRaleigh} alt="Project avatar" className={cn.avatar} />}
+                      {project.name === 'RaleighV2' && <Avatar src={logoRaleighV2} alt="Project avatar" className={cn.avatar} />}
                       {project.name === 'Richmond' && <Avatar src={logoRichmond} alt="Project avatar" className={cn.avatar} />}
                       {project.name === 'RioMaior' && <Avatar src={logoRioMaior} alt="Project avatar" className={cn.avatar} />}
                       {project.name === 'StCharles' && <Avatar src={logoStCharles} alt="Project avatar" className={cn.avatar} />}

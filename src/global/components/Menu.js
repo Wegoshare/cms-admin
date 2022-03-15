@@ -30,6 +30,7 @@ import logoHowardCounty from '../../projects/assets/howardcounty.png'
 import logoInverness from '../../projects/assets/inverness.png'
 import logoLagoa from '../../projects/assets/lagoa.png'
 import logoRaleigh from '../../projects/assets/raleigh.png'
+import logoRaleighV2 from '../../projects/assets/raleighv2.png'
 import logoRichmond from '../../projects/assets/richmond.png'
 import logoRioMaior from '../../projects/assets/riomaior.png'
 import logoStCharles from '../../projects/assets/stcharles.png'
@@ -132,6 +133,7 @@ export class Menu extends React.Component {
                   {project.name === 'Inverness' && <ListItemIcon><Avatar src={logoInverness} alt="Project avatar" className={open ? cn.avatarBig : cn.avatarSmall} /></ListItemIcon>}
                   {project.name === 'Lagoa' && <ListItemIcon><Avatar src={logoLagoa} alt="Project avatar" className={open ? cn.avatarBig : cn.avatarSmall} /></ListItemIcon>}
                   {project.name === 'Raleigh' && <ListItemIcon><Avatar src={logoRaleigh} alt="Project avatar" className={open ? cn.avatarBig : cn.avatarSmall} /></ListItemIcon>}
+                  {project.name === 'RaleighV2' && <ListItemIcon><Avatar src={logoRaleighV2} alt="Project avatar" className={open ? cn.avatarBig : cn.avatarSmall} /></ListItemIcon>}
                   {project.name === 'Richmond' && <ListItemIcon><Avatar src={logoRichmond} alt="Project avatar" className={open ? cn.avatarBig : cn.avatarSmall} /></ListItemIcon>}
                   {project.name === 'RioMaior' && <ListItemIcon><Avatar src={logoRioMaior} alt="Project avatar" className={open ? cn.avatarBig : cn.avatarSmall} /></ListItemIcon>}
                   {project.name === 'StCharles' && <ListItemIcon><Avatar src={logoStCharles} alt="Project avatar" className={open ? cn.avatarBig : cn.avatarSmall} /></ListItemIcon>}
