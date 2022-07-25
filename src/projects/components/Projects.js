@@ -58,6 +58,8 @@ import logoLeiria from '../assets/leiria.png'
 import logoCoruche from '../assets/coruche.png'
 import logoValeLobo from '../assets/valelobo.png'
 import logoGuildford from '../assets/guildford.png'
+import logoOrford from '../assets/orford.png'
+
 
 
 import { cn } from './Projects.style'
@@ -194,6 +196,7 @@ class AProjects extends Component {
                       {project.name === 'Coruche' && <Avatar src={logoCoruche} alt="Project avatar" className={cn.avatar} />}
                       {project.name === 'ValeLobo' && <Avatar src={logoValeLobo} alt="Project avatar" className={cn.avatar} />}
                       {project.name === 'Guildford' && <Avatar src={logoGuildford} alt="Project avatar" className={cn.avatar} />}
+                      {project.name === 'Orford' && <Avatar src={logoOrford} alt="Project avatar" className={cn.avatar} />}
 
                       <div className="mt-md pt-sm">
                         <Typography type="lg" className="text-one-line">
