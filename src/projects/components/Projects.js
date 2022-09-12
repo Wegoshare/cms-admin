@@ -57,6 +57,7 @@ import logoAlmeirim from '../assets/almeirim.png'
 import logoLeiria from '../assets/leiria.png'
 import logoCoruche from '../assets/coruche.png'
 import logoValeLobo from '../assets/valelobo.png'
+import logoCalderwood from '../assets/calderwood.png'
 import logoGuildford from '../assets/guildford.png'
 import logoOrford from '../assets/orford.png'
 
@@ -195,6 +196,7 @@ class AProjects extends Component {
                       {project.name === 'IPLeiria' && <Avatar src={logoLeiria} alt="Project avatar" className={cn.avatar} />}
                       {project.name === 'Coruche' && <Avatar src={logoCoruche} alt="Project avatar" className={cn.avatar} />}
                       {project.name === 'ValeLobo' && <Avatar src={logoValeLobo} alt="Project avatar" className={cn.avatar} />}
+                      {project.name === 'Calderwood' && <Avatar src={logoCalderwood} alt="Project avatar" className={cn.avatar} />}
                       {project.name === 'Guildford' && <Avatar src={logoGuildford} alt="Project avatar" className={cn.avatar} />}
                       {project.name === 'Orford' && <Avatar src={logoOrford} alt="Project avatar" className={cn.avatar} />}
 
