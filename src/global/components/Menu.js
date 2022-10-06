@@ -46,6 +46,7 @@ import logoValeLobo from '../../projects/assets/valelobo.png'
 import logoCalderwood from '../../projects/assets/calderwood.png'
 import logoGuildford from '../../projects/assets/guildford.png'
 import logoOrford from '../../projects/assets/orford.png'
+import logoBermuda from '../../projects/assets/bermuda.png'
 
 
 
@@ -152,6 +153,7 @@ export class Menu extends React.Component {
                   {project.name === 'Calderwood' && <ListItemIcon><Avatar src={logoCalderwood} alt="Project avatar" className={open ? cn.avatarBig : cn.avatarSmall} /></ListItemIcon>}
                   {project.name === 'Guildford' && <ListItemIcon><Avatar src={logoGuildford} alt="Project avatar" className={open ? cn.avatarBig : cn.avatarSmall} /></ListItemIcon>}
                   {project.name === 'Orford' && <ListItemIcon><Avatar src={logoOrford} alt="Project avatar" className={open ? cn.avatarBig : cn.avatarSmall} /></ListItemIcon>}
+                  {project.name === 'Bermuda' && <ListItemIcon><Avatar src={logoBermuda} alt="Project avatar" className={open ? cn.avatarBig : cn.avatarSmall} /></ListItemIcon>}
 
 
                   <div className={`${cn.pojectName} text-one-line`}>{project.name}</div>
