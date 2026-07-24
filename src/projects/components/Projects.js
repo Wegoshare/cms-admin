@@ -61,6 +61,8 @@ import logoCalderwood from '../assets/calderwood.png'
 import logoGuildford from '../assets/guildford.png'
 import logoOrford from '../assets/orford.png'
 import logoBermuda from '../assets/bermuda.png'
+import logoCIMAA from '../assets/cimaa.png'
+
 
 
 
@@ -202,6 +204,7 @@ class AProjects extends Component {
                       {project.name === 'Guildford' && <Avatar src={logoGuildford} alt="Project avatar" className={cn.avatar} />}
                       {project.name === 'Orford' && <Avatar src={logoOrford} alt="Project avatar" className={cn.avatar} />}
                       {project.name === 'Bermuda' && <Avatar src={logoBermuda} alt="Project avatar" className={cn.avatar} />}
+                      {project.name === 'CIMAA' && <Avatar src={logoCIMAA} alt="Project avatar" className={cn.avatar} />}
 
                       <div className="mt-md pt-sm">
                         <Typography type="lg" className="text-one-line">
