@@ -47,7 +47,7 @@ import logoCalderwood from '../../projects/assets/calderwood.png'
 import logoGuildford from '../../projects/assets/guildford.png'
 import logoOrford from '../../projects/assets/orford.png'
 import logoBermuda from '../../projects/assets/bermuda.png'
-import logoCIMAA from '../projects/assets/cimaa.png'
+import logoCIMAA from '../../projects/assets/cimaa.png'
 
 
 
